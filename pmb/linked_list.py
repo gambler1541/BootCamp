@@ -142,14 +142,14 @@ class Linked_list:
             bef = cur
             cur = cur.next
         # B. 삭제 노드가 첫 번째 노드가 아닐때
-        if target == cur.data:
-            if cur == self.tail:
-                self.tail = bef
+            if target == cur.data:
+                if cur == self.tail:
+                    self.tail = bef
 
-            # B-2. 일반적인 경우
-            bef.next = cur.next
-            self.d_size -= 1
-            return cur.data
+                # B-2. 일반적인 경우
+                bef.next = cur.next
+                self.d_size -= 1
+                return cur.data
 
         return None
 
@@ -183,8 +183,43 @@ if __name__ == '__main__':
     #     show_list(slist)
     #     print()
 
+    # 새객체 생성(실행될 때마다)
+    # slist = Linked_list()
+    # print("데이터 개수: {}".format(slist.size()))
+    # show_list(slist)
+    # print()
+    #
+    # slist.append(3)
+    # slist.append(1)
+    # slist.append(5)
+    # slist.append(2)
+    # slist.append(10)
+    # slist.append(7)
+    # slist.append(2)
+    #
+    # print("데이터 개수: {}".format(slist.size()))
+    # show_list(slist)
+    # print()
+    #
+    #
+    # if slist.remove(2):
+    #     print("데이터 개수: {}".format(slist.size()))
+    #     show_list(slist)
+    #     print()
+    # else:
+    #     print('target Not found')
+    #
+    # if slist.remove(2):
+    #     print("데이터 개수: {}".format(slist.size()))
+    #     show_list(slist)
+    #     print()
+    # else:
+    #     print('target Not found')
+    #
+
+
     slist = Linked_list()
-    print("데이터 개수: {}".format(slist.size()))
+    print(f'데이터 갯수 : {slist.size()}')
     show_list(slist)
     print()
 
@@ -196,33 +231,20 @@ if __name__ == '__main__':
     slist.append(7)
     slist.append(2)
 
-    print("데이터 개수: {}".format(slist.size()))
+    print(f'데이터 갯수 : {slist.size()}')
     show_list(slist)
-    print()
+    print('\n')
 
-
-
-
-
-
-
-    if slist.remove(2):
-        print("데이터 개수: {}".format(slist.size()))
-        show_list(slist)
-        print()
+    data1, pos1 = slist.search_target(2)
+    if data1:
+        print(f'searched data : {data1} at pos <{pos1}>')
     else:
-        print('target Not found')
+        print('there is no such data')
 
 
-
-
-
-    if slist.remove(2):
-        print("데이터 개수: {}".format(slist.size()))
-        show_list(slist)
-        print()
+    data2, pos2 = slist.search_target(2, pos1 + 1)
+    if data2:
+        print(f'searched data : {data2} at pos <{pos2}>')
     else:
-        print('target Not found')
-
-
+        print('there is no such data')
 
