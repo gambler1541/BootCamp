@@ -20,6 +20,9 @@ class Node:
 
 
 class Stack:
+    '''
+    head가 new node를 가리킴(제일 상단에 있는 데이터)
+    '''
     def __init__(self):
         self.head = None
 
