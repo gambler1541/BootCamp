@@ -120,6 +120,35 @@ class BST:
 
         return removed_node
 
+    # 인자가 데이터가 아니라 노드
+    # insert() 메서드에서
+    # 노드 생성 코드만 빼면
+    # 코드 흐름은 같음
+    def insert_node(self, node):
+        # 노드 생성 코드 없음
+        # 노드 생성에 따른 부담을 덜 수 있다
+        cur = self.root
+
+        # insert() 메서드와 다른 점
+        # new_node -> node
+        if cur == None:
+            self.root = node
+            return
+        while True:
+            parent = cur
+            # insert()와 다른점
+            # data -> node.data
+            if node.data < cur.data:
+                cur = cur.left
+                if not cur:
+                    parent.left = node
+                    return
+            else:
+                cur = cur.right
+                if not cur:
+                    parent.right = node
+                    return
+
 
 if __name__ == '__main__':
     bst = BST()
@@ -130,20 +159,23 @@ if __name__ == '__main__':
     bst.insert(2)
     bst.insert(4)
     bst.insert(5)
-    bst.insert(8)
     bst.insert(10)
     bst.insert(9)
     bst.insert(11)
 
     f = lambda x: print(x, end='  ')
+    #
+    # # 전위 순회
 
-    # 전위 순회
+    #
+    # # bst.remove(9)
+    # # bst.preorder_traverse(bst.get_root(), f)
+    #
+    # bst.remove(8)
+    # bst.preorder_traverse(bst.get_root(), f)
+    node = bst.remove(5)
+    node.data = 7
+    bst.insert_node(node)
     bst.preorder_traverse(bst.get_root(), f)
     print()
-
-    # bst.remove(9)
-    # bst.preorder_traverse(bst.get_root(), f)
-
-    bst.remove(8)
-    bst.preorder_traverse(bst.get_root(), f)
 
