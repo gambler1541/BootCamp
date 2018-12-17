@@ -88,7 +88,7 @@ class BST:
         # target == cur.data
         else:
         # 1. 리프 노드일 때
-            if not cur.left and cur.right:
+            if not cur.left and not cur.right:
                 rem_node = cur
                 cur = None
         # 2-1. 자식 노드가 하나일 때, 왼쪽 자식이 있을 때
@@ -141,6 +141,9 @@ if __name__ == '__main__':
     bst.preorder_traverse(bst.get_root(), f)
     print()
 
-    bst.remove(9)
+    # bst.remove(9)
+    # bst.preorder_traverse(bst.get_root(), f)
+
+    bst.remove(8)
     bst.preorder_traverse(bst.get_root(), f)
 
