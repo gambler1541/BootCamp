@@ -161,6 +161,9 @@ def show_list(slist):
     for i in range(slist.size()):
         print(slist.search_pos(i), end="  ")
 
+def sort_list(list1, list2):
+    pass
+
 
 if __name__ == '__main__':
     '''
@@ -217,34 +220,47 @@ if __name__ == '__main__':
     #     print('target Not found')
     #
 
-
+    #
+    # slist = Linked_list()
+    # print(f'데이터 갯수 : {slist.size()}')
+    # show_list(slist)
+    # print()
+    #
+    # slist.append(3)
+    # slist.append(1)
+    # slist.append(5)
+    # slist.append(2)
+    # slist.append(10)
+    # slist.append(7)
+    # slist.append(2)
+    #
+    # print(f'데이터 갯수 : {slist.size()}')
+    # show_list(slist)
+    # print('\n')
+    #
+    # data1, pos1 = slist.search_target(2)
+    # if data1:
+    #     print(f'searched data : {data1} at pos <{pos1}>')
+    # else:
+    #     print('there is no such data')
+    #
+    #
+    # data2, pos2 = slist.search_target(2, pos1 + 1)
+    # if data2:
+    #     print(f'searched data : {data2} at pos <{pos2}>')
+    # else:
+    #     print('there is no such data')
+    #
     slist = Linked_list()
-    print(f'데이터 갯수 : {slist.size()}')
-    show_list(slist)
-    print()
-
-    slist.append(3)
     slist.append(1)
-    slist.append(5)
     slist.append(2)
-    slist.append(10)
-    slist.append(7)
-    slist.append(2)
-
-    print(f'데이터 갯수 : {slist.size()}')
+    slist.append(3)
+    print('slist: ', end=' ')
     show_list(slist)
-    print('\n')
 
-    data1, pos1 = slist.search_target(2)
-    if data1:
-        print(f'searched data : {data1} at pos <{pos1}>')
-    else:
-        print('there is no such data')
-
-
-    data2, pos2 = slist.search_target(2, pos1 + 1)
-    if data2:
-        print(f'searched data : {data2} at pos <{pos2}>')
-    else:
-        print('there is no such data')
-
+    s2list = Linked_list()
+    s2list.append(4)
+    s2list.append(5)
+    s2list.append(6)
+    print('\ns2list: ', end=' ')
+    show_list(s2list)
